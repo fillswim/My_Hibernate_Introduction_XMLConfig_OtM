@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!--    Определение драйвера для БД-->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <!--    Сессия для связи с БД будет привязана к треду,в котором создается сессия-->
+        <property name="current_session_context_class">thread</property>
+
+        <!--    Определение диалекта БД-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MariaDBDialect</property>
+
+        <!--    Автоматическое создание таблиц в БД-->
+<!--        <property name="hibernate.hbm2ddl.auto">update</property>-->
+
+        <!--    Создание Entity-->
+        <mapping class="com.fillswim.hibernate.One_to_Many.Entity.Employee"/>
+        <mapping class="com.fillswim.hibernate.One_to_Many.Entity.Department"/>
+
+    </session-factory>
+</hibernate-configuration>
